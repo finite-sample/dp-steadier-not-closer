@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbers]{natbib}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+
+\title{Steadier, Not Closer:\\Separating Convergence from Crystallization in Deliberative Polls}
+\author{Gaurav Sood}
+\date{September 22, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Observed opinion dispersion can fall because true opinions converge or because
+answers become less noisy. We derive the decomposition for repeated multi-item
+attitude measures in partially nested and multiple-membership deliberative
+designs. Wave-varying measurement error contaminates within-group
+homogenization, the intraclass correlation, and regressions of change on prior
+opinion. Under classical independent error it cannot, however, manufacture an
+increase in the absolute variance of group means. Multiple invariant indicators,
+random assignment to groups, and a survey-only control arm identify distinct
+estimands for true convergence, between-group divergence, and crystallization.
+\end{abstract}
+
+\section{Setup}
+
+Let $a\in\{0,1\}$ index control and deliberation, $t\in\{1,2\}$ wave,
+$i$ person, $g$ assigned group, and $k$ item. The measurement model is
+\begin{equation}
+  y_{kita}=\nu_k+\lambda_k\eta_{ita}+\epsilon_{kita},
+  \qquad \E(\epsilon_{kita}\mid\eta_{ita},a,g)=0.
+\end{equation}
+Loadings and intercepts are invariant across waves and arms; residual variances
+$\theta_{kta}$ are free. For fixed composite weights $q$ normalized so that
+$\sum_k q_k\lambda_k=1$, define
+\begin{equation}
+  S_{ita}=\sum_k q_k(y_{kita}-\nu_k)=\eta_{ita}+u_{ita},
+  \qquad \omega_{ta}=\Var(u_{ita}\mid a).
+\end{equation}
+The scalar $\omega_{ta}=q'\Theta_{ta}q$ includes residual covariance when it is
+modeled. ``Crystallization'' is a treatment-caused reduction in $\omega$.
+
+\section{What changing reliability does and does not bias}
+
+\begin{proposition}[The mean effect survives heteroskedastic measurement error]
+If measurement errors have conditional mean zero, then
+\[
+\E[(S_{i2}-S_{i1})\mid a=1]-\E[(S_{i2}-S_{i1})\mid a=0]
+=\E[(\eta_{i2}-\eta_{i1})\mid a=1]-\E[(\eta_{i2}-\eta_{i1})\mid a=0].
+\]
+Equality holds without requiring $\omega_{1a}=\omega_{2a}$.
+\end{proposition}
+\begin{proof}
+Substitute $S_{it}=\eta_{it}+u_{it}$ and apply iterated expectations. Each error
+mean is zero, so both arm-specific mean error changes vanish. Different error
+variances change the sampling variance, not the estimand.
+\end{proof}
+
+\begin{proposition}[Observed within-group homogenization mixes two mechanisms]
+Under local independence of $u$ across people and independence from true opinion,
+the population within-group variance satisfies
+\[
+W_{tga}(S)=W_{tga}(\eta)+\omega_{ta}.
+\]
+Consequently,
+\[
+W_{2g1}(S)-W_{1g1}(S)
+=\{W_{2g1}(\eta)-W_{1g1}(\eta)\}+(\omega_{21}-\omega_{11}).
+\]
+\end{proposition}
+\begin{proof}
+Within a group, $\Var(\eta+u)=\Var(\eta)+\Var(u)+2\Cov(\eta,u)$.
+The covariance is zero by assumption. Subtract the two wave-specific identities.
+\end{proof}
+
+\begin{corollary}
+If true within-group dispersion is unchanged and $\omega_{21}<\omega_{11}$,
+observed variance falls. The ratio statistic
+$H=1-W_2(S)/W_1(S)$ is positive even though true convergence is zero.
+\end{corollary}
+
+\begin{proposition}[Classical crystallization cannot create absolute divergence]
+For balanced groups of size $n$, independent person-level error implies
+\[
+\Var_g(\bar S_{gt})=\Var_g(\bar\eta_{gt})+\frac{\omega_t}{n}.
+\]
+Holding true group means fixed, a fall in $\omega_t$ weakly lowers the absolute
+variance of observed group means. With unequal sizes the error contribution for
+group $g$ is $\omega_t/n_g$.
+\end{proposition}
+\begin{proof}
+$\bar S_{gt}=\bar\eta_{gt}+n^{-1}\sum_i u_{igt}$. Independence makes the cross
+covariance zero and the variance of the averaged error $\omega_t/n$.
+\end{proof}
+
+\begin{remark}
+This proposition is a useful boundary. Crystallization can create apparent
+within-group homogenization, but not an increase in the absolute variance of
+group means under the stated assumptions. A claimed absolute divergence artifact
+therefore requires nonclassical correlated error, changing group sizes or
+composition, scale noninvariance, or a statistic other than absolute variance.
+\end{remark}
+
+\begin{proposition}[Relative divergence can rise mechanically]
+If $\eta_{igt}=\mu_t+b_{gt}+v_{igt}$ with variances $\sigma^2_{bt}$ and
+$\sigma^2_{wt}$, then
+\[
+\operatorname{ICC}_t(S)=
+\frac{\sigma^2_{bt}}{\sigma^2_{bt}+\sigma^2_{wt}+\omega_t}.
+\]
+For $\sigma^2_{bt}>0$, its derivative with respect to $\omega_t$ is negative.
+Thus reducing error raises the observed ICC even when both true variance
+components are fixed.
+\end{proposition}
+\begin{proof}
+The group covariance of two distinct people is $\sigma_b^2$, while each observed
+variance adds $\omega_t$ to the true total. Differentiate the ratio.
+\end{proof}
+
+\begin{proposition}[Observed prior opinion induces regression to the mean]
+Under classical error independent across waves,
+\[
+\Cov(S_{i2}-S_{i1},S_{i1})
+=\Cov(\eta_{i2}-\eta_{i1},\eta_{i1})-\omega_1.
+\]
+\end{proposition}
+\begin{proof}
+Expand the covariance of $(\Delta\eta_i+u_{i2}-u_{i1})$ and
+$(\eta_{i1}+u_{i1})$. All cross terms vanish except
+$\Cov(-u_{i1},u_{i1})=-\omega_1$.
+\end{proof}
+
+\section{Structural decomposition}
+
+For a fixed group, write $x_i=\eta_{i1}-\bar\eta_{g1}$. The treated change model
+is
+\[
+\eta_{i2}=\eta_{i1}+\tau+\gamma(\bar\eta_{g1}-\eta_{i1})+b_g+\delta_i.
+\]
+After subtracting the T2 group mean,
+\[
+\eta_{i2}-\bar\eta_{g2}=(1-\gamma)x_i+(\delta_i-\bar\delta_g).
+\]
+When $x_i$ and $\delta_i$ are independent, the inherited within-group variance is
+multiplied by $(1-\gamma)^2$; idiosyncratic true change may offset that reduction.
+The common effect $b_g$ cancels within group and contributes to between-group
+variance. Hence $\gamma$, $\sigma_b^2$, and $\omega_2-\omega_1$ correspond to
+different mechanisms.
+
+With reshuffling, let $W$ contain session weights and $b$ the session effects.
+Then
+\[
+\Var(Wb)=\sigma_b^2WW',
+\]
+so two participants' group-induced changes covary in proportion to the overlap
+of their session weights. One-hot rows recover fixed groups.
+
+\section{Identification}
+
+With at least three locally independent indicators and a scale constraint,
+off-diagonal item covariances identify the common factor variance because
+$\Cov(y_k,y_\ell)=\lambda_k\lambda_\ell\Var(\eta)$ for $k\ne\ell$.
+Indicator variances then identify residual variances. Equality of loadings and
+intercepts across waves makes the latent scale comparable; equality of residual
+variances is not imposed and is precisely the restriction being studied
+\citep{mcardle2009}. Same-item residual correlations across waves must be modeled
+or tested rather than silently set to zero.
+
+Random assignment to groups makes baseline latent composition independent of
+group effects. A survey-only control arm identifies the error-variance change
+from retesting and panel conditioning. The crystallization estimand is
+\[
+C=(\omega_{21}-\omega_{11})-(\omega_{20}-\omega_{10}).
+\]
+Interpreting $C$ causally additionally requires measurement invariance, no
+differential attrition, and no treatment-induced reporting process omitted from
+the measurement model. Single-item outcomes observed twice do not identify both
+latent change and two error variances without further information.
+
+The design is partially nested because treatment participants share deliberation
+groups while controls do not \citep{bauer2008,roberts2013}. For multiple
+sessions, the multiple-membership extension has covariance
+\[
+\sigma_b^2WW'.
+\]
+
+\section{Simulation check}
+
+The accompanying simulation fits conventional random-intercept models with
+\texttt{lme4}; it does not substitute a hand-written variance-component estimator.
+It varies convergence, between-group divergence, and item-error reduction
+independently. Table~\ref{tab:simulation-decomposition} reports 200 replicates per
+scenario. In the crystallization-only condition, observed within-group spread
+falls and the observed ICC rises while true spread and true between-group
+variance remain stable. Raw group-mean variance falls, as the third proposition
+requires.
+
+\input{../results/simulation_table.tex}
+
+\section{Implications}
+
+Variance-based claims in deliberative polling should distinguish three targets:
+true within-group convergence, absolute between-group divergence, and reduced
+measurement error. The first and third are inseparable from a single noisy index.
+The second is not mechanically inflated by classical error reduction, although an
+ICC or between/within ratio is. This distinction narrows the model's burden and
+clarifies what a reanalysis of the twenty-one-poll archive can and cannot revise
+\citep{luskin2022}.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}

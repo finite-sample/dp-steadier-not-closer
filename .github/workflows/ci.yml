@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.6.0"
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+      - uses: r-lib/actions/setup-tinytex@v2
+      - name: Build proof and run checks
+        run: make ci
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: proof-and-simulation
+          path: |
+            paper/proof.pdf
+            figures
+            results
+            reports
+

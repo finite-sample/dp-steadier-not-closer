@@ -1,0 +1,26 @@
+Package: steadiernotcloser
+Type: Project
+Title: Separate Opinion Convergence from Response Crystallization
+Version: 0.1.0
+Authors@R: person("Gaurav", "Sood", role = c("aut", "cre"), email = "gsood07@gmail.com")
+Description: Formal derivations and design simulations for separating true
+    within-group convergence, between-group divergence, and wave-varying
+    measurement error in deliberative polls.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    assertr,
+    dplyr,
+    ggplot2,
+    kableExtra,
+    knitr,
+    lme4,
+    lintr,
+    purrr,
+    readr,
+    rprojroot,
+    testthat,
+    tibble,
+    tidyr
+Config/testthat/edition: 3
+
