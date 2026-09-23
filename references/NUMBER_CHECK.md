@@ -13,7 +13,7 @@ polarization estimate is -.02221. The original repository's `AUDIT.md` is the
 authoritative, fully tested audit for the empirical tables.
 
 For Cor and Sood's knowledge paper, the central reliability and learning
-numbers reproduce after rounding. The companion `dp-knowledge` repository
+numbers reproduce after rounding. The companion `guessing-and-forgetting` repository
 records two changed diagnostics: LCA exceeds raw learning for 80.8% of items in
 the deposited workflow rather than the paper's 78.5%, and current `guess`
 classifies 75.1% of items as fitting rather than 83.1%. Mean raw, LCA, and
