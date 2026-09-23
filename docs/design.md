@@ -91,14 +91,19 @@ groups while controls do not. Variance-component claims require the latent model
 
 ## Data dependency and readiness
 
-The empirical reanalysis consumes the versioned output
-`data/processed/knowledge_attitude_panel.csv` from
+Until the source-first build is complete, the empirical reanalysis consumes
+the versioned `data/processed/knowledge_attitude_panel.csv` output from
 [`dp-knowledge-linkage`](https://github.com/soodoku/dp-knowledge-linkage). Its
 current public-data bridge contains six exactly validated polls, 1,661 linked
 respondents, 43 poll-specific attitude indices, T1/T2 knowledge scores, T1/T2
 attitude responses, and fixed small-group identifiers. The item-level knowledge
 responses remain in the companion long table, so a joint knowledge model need
 not rely on the composite score.
+
+The durable dependency is [`dp-data`](https://github.com/soodoku/dp-data), not
+the linkage repository. Switch only after `dp-data` rebuilds the panel from
+audited poll-level sources and documents row, key, item, and derived-value
+parity. At that point `dp-knowledge-linkage` can be archived.
 
 This bridge is sufficient to study knowledge–attitude associations and the
 fixed-group special case descriptively. It does not by itself identify the full

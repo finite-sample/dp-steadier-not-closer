@@ -40,13 +40,16 @@ The empirical-design contract is in [`docs/design.md`](docs/design.md).
 ## Empirical data dependency
 
 The proof and simulation do not require the Cor-Sood data. The empirical
-reanalysis does. The separate
-[`dp-knowledge-linkage`](https://github.com/soodoku/dp-knowledge-linkage)
-repository supplies a validated knowledge–attitude panel for six polls: 1,661
-respondents and 43 poll-specific attitude indices. It links only respondents
-whose public row order reproduces the deposited T1/T2 knowledge scores and
-gender. The older archive still lacks the control-arm and session-roster fields
-needed for the full causal multiple-membership model.
+reanalysis does. The current bridge is
+[`dp-knowledge-linkage`](https://github.com/soodoku/dp-knowledge-linkage), which
+supplies a validated knowledge–attitude panel for six polls: 1,661 respondents
+and 43 poll-specific attitude indices. It links only respondents whose public
+row order reproduces the deposited T1/T2 knowledge scores and gender. That
+repository is transitional: [`dp-data`](https://github.com/soodoku/dp-data)
+will replace it after rebuilding the same linkage from audited poll-level
+sources and passing row-, key-, item-, and value-level parity checks. The older
+archive still lacks the control-arm and session-roster fields needed for the
+full causal multiple-membership model.
 
 ## Reproduce
 
