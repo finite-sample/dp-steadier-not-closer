@@ -89,10 +89,27 @@ groups while controls do not. Variance-component claims require the latent model
   jointly or propagate first-stage uncertainty; do not regress on plug-in factor
   scores and call the usual second-stage interval complete.
 
+## Data dependency and readiness
+
+The empirical reanalysis consumes the versioned output
+`data/processed/knowledge_attitude_panel.csv` from
+[`dp-knowledge-linkage`](https://github.com/soodoku/dp-knowledge-linkage). Its
+current public-data bridge contains six exactly validated polls, 1,661 linked
+respondents, 43 poll-specific attitude indices, T1/T2 knowledge scores, T1/T2
+attitude responses, and fixed small-group identifiers. The item-level knowledge
+responses remain in the companion long table, so a joint knowledge model need
+not rely on the composite score.
+
+This bridge is sufficient to study knowledge–attitude associations and the
+fixed-group special case descriptively. It does not by itself identify the full
+model: control-arm membership and session-level multiple-membership rosters are
+not present in the older public archive. Those fields must be obtained from a
+poll-specific deposit or platform export before estimating causal
+crystallization or reshuffled-group effects.
+
 ## Analysis status
 
 The research questions and some motivating outcomes were known before this
 repository existed. This is therefore a versioned design document, not a claim of
 prospective preregistration. Any later confirmatory analysis needs a genuinely
 sealed holdout or a third-party time-stamped registration before outcome fitting.
-

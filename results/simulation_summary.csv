@@ -1,29 +1,29 @@
 scenario,metric,metric_label,mean,q025,q975
-crystallization_only,observed_homogenization,Observed within-group homogenization,0.13931091405423038,0.08255303707766042,0.19591893196164467
+crystallization_only,observed_homogenization,Observed within-group homogenization,0.139311,0.082553,0.195919
 crystallization_only,latent_homogenization,True within-group homogenization,0,0,0
-crystallization_only,observed_between_change,Observed between-component change,-6.549309102949554e-4,-0.029540159302384073,0.0248850574461605
+crystallization_only,observed_between_change,Observed between-component change,-6.55e-4,-0.02954,0.024885
 crystallization_only,latent_between_change,True between-component change,0,0,0
-crystallization_only,observed_group_mean_variance_change,Raw group-mean variance change,-0.00735353709682799,-0.03878830917808153,0.015286585964583516
-crystallization_only,observed_icc_change,Observed ICC change,0.012797730872027215,-0.0072630111972120355,0.0319595444080846
+crystallization_only,observed_group_mean_variance_change,Raw group-mean variance change,-0.007354,-0.038788,0.015287
+crystallization_only,observed_icc_change,Observed ICC change,0.012798,-0.007263,0.03196
 crystallization_only,latent_icc_change,True ICC change,0,0,0
-convergence_only,observed_homogenization,Observed within-group homogenization,0.4629753874031777,0.4225104924948412,0.4994516437134052
-convergence_only,latent_homogenization,True within-group homogenization,0.5099999944801654,0.5099999947989144,0.5100000083006208
-convergence_only,observed_between_change,Observed between-component change,-3.266174668066173e-4,-0.0310796645523937,0.02750077914627588
-convergence_only,latent_between_change,True between-component change,1.9589017353320668e-4,-0.02118590797141716,0.01622111271853501
-convergence_only,observed_group_mean_variance_change,Raw group-mean variance change,-0.020628651306015183,-0.05124723851398298,0.00675491673673346
-convergence_only,observed_icc_change,Observed ICC change,0.07073333970281052,0.03929658161748444,0.10568725715777624
-convergence_only,latent_icc_change,True ICC change,0.09015283763059306,0.058727721475453895,0.11805043256932976
-divergence_only,observed_homogenization,Observed within-group homogenization,-0.0017954295886670696,-0.06532992076409525,0.05630760434100575
-divergence_only,latent_homogenization,True within-group homogenization,-2.7225434540145717e-8,-1.2381047120868515e-8,6.044990838449735e-9
-divergence_only,observed_between_change,Observed between-component change,0.23273419925542607,0.13763528699605487,0.3556844156620862
-divergence_only,latent_between_change,True between-component change,0.23326634523310136,0.13410297778896252,0.357194126941602
-divergence_only,observed_group_mean_variance_change,Raw group-mean variance change,0.23279136303140832,0.13795267959491417,0.3559217495029033
-divergence_only,observed_icc_change,Observed ICC change,0.14141521780166555,0.09857656949309312,0.18531723166747546
-divergence_only,latent_icc_change,True ICC change,0.15088898123821612,0.10034357675448001,0.19297375286908552
-all_three,observed_homogenization,Observed within-group homogenization,0.5644012489774325,0.5348624591890527,0.5919377332368022
-all_three,latent_homogenization,True within-group homogenization,0.5100000000839263,0.5099999986477822,0.5100000012090824
-all_three,observed_between_change,Observed between-component change,0.23301478536475143,0.13816825632689156,0.3506941175860304
-all_three,latent_between_change,True between-component change,0.2337373722473039,0.13287387135211207,0.3534710742949575
-all_three,observed_group_mean_variance_change,Raw group-mean variance change,0.2059663569705218,0.11266073138014089,0.31997549442227496
-all_three,observed_icc_change,Observed ICC change,0.3070006091250446,0.23378070719431035,0.37300733251979507
-all_three,latent_icc_change,True ICC change,0.30654924014847873,0.22434902282954777,0.365468261971686
+convergence_only,observed_homogenization,Observed within-group homogenization,0.462975,0.42251,0.499452
+convergence_only,latent_homogenization,True within-group homogenization,0.51,0.51,0.51
+convergence_only,observed_between_change,Observed between-component change,-3.27e-4,-0.03108,0.027501
+convergence_only,latent_between_change,True between-component change,1.96e-4,-0.021186,0.016221
+convergence_only,observed_group_mean_variance_change,Raw group-mean variance change,-0.020629,-0.051247,0.006755
+convergence_only,observed_icc_change,Observed ICC change,0.070733,0.039297,0.105687
+convergence_only,latent_icc_change,True ICC change,0.090153,0.058728,0.11805
+divergence_only,observed_homogenization,Observed within-group homogenization,-0.001795,-0.06533,0.056308
+divergence_only,latent_homogenization,True within-group homogenization,-0,-0,0
+divergence_only,observed_between_change,Observed between-component change,0.232734,0.137635,0.355684
+divergence_only,latent_between_change,True between-component change,0.233266,0.134103,0.357194
+divergence_only,observed_group_mean_variance_change,Raw group-mean variance change,0.232791,0.137953,0.355922
+divergence_only,observed_icc_change,Observed ICC change,0.141415,0.098577,0.185317
+divergence_only,latent_icc_change,True ICC change,0.150889,0.100344,0.192974
+all_three,observed_homogenization,Observed within-group homogenization,0.564401,0.534862,0.591938
+all_three,latent_homogenization,True within-group homogenization,0.51,0.51,0.51
+all_three,observed_between_change,Observed between-component change,0.233015,0.138168,0.350694
+all_three,latent_between_change,True between-component change,0.233737,0.132874,0.353471
+all_three,observed_group_mean_variance_change,Raw group-mean variance change,0.205966,0.112661,0.319975
+all_three,observed_icc_change,Observed ICC change,0.307001,0.233781,0.373007
+all_three,latent_icc_change,True ICC change,0.306549,0.224349,0.365468

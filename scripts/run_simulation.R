@@ -25,7 +25,11 @@ summary <- results |>
     q025 = stats::quantile(estimate, .025),
     q975 = stats::quantile(estimate, .975),
     .by = c(scenario, metric, metric_label)
-  )
+  ) |>
+  dplyr::mutate(dplyr::across(dplyr::where(is.double), ~ round(.x, 6)))
+
+results <- results |>
+  dplyr::mutate(dplyr::across(dplyr::where(is.double), ~ round(.x, 6)))
 
 dir.create(project_file("results"), recursive = TRUE, showWarnings = FALSE)
 readr::write_csv(results, project_file("results", "simulation_replicates.csv"))

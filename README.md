@@ -13,6 +13,11 @@ mechanisms and supplies a simulation that separates:
 The deliberately droll name is the central warning: a group can look closer
 because its answers became steadier.
 
+The motivating Distortions author manuscript is preserved with provenance in
+[`references/README.md`](references/README.md).
+The accompanying [`references/NUMBER_CHECK.md`](references/NUMBER_CHECK.md)
+separates published counts from corrected replication counts.
+
 ## Main result
 
 For a normalized composite score `S_it = eta_it + u_it`, the expected change in
@@ -32,6 +37,17 @@ interpreting claims of between-group divergence.
 The formal statements and proofs are in [`paper/proof.pdf`](paper/proof.pdf).
 The empirical-design contract is in [`docs/design.md`](docs/design.md).
 
+## Empirical data dependency
+
+The proof and simulation do not require the Cor-Sood data. The empirical
+reanalysis does. The separate
+[`dp-knowledge-linkage`](https://github.com/soodoku/dp-knowledge-linkage)
+repository supplies a validated knowledge–attitude panel for six polls: 1,661
+respondents and 43 poll-specific attitude indices. It links only respondents
+whose public row order reproduces the deposited T1/T2 knowledge scores and
+gender. The older archive still lacks the control-arm and session-roster fields
+needed for the full causal multiple-membership model.
+
 ## Reproduce
 
 ```sh
@@ -49,4 +65,3 @@ This first release proves the measurement-error decomposition and validates the
 observable implications in simulation. It does not claim to have fitted the full
 latent partially nested multiple-membership model to a Deliberative Poll. That
 requires an audited item/group/control data contract first.
-

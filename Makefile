@@ -18,9 +18,15 @@ check: test lint
 ci: paper check
 
 ci-docker:
-	docker run --rm -v "$(CURDIR):/work" -w /work rocker/verse:4.6.0 \
-		bash -lc 'Rscript -e '\''install.packages(c("remotes", "renv"), repos="https://cloud.r-project.org"); remotes::install_deps(dependencies=TRUE)'\'' && make ci'
+	docker run --rm \
+		-e MAKEFLAGS="-e -j1" \
+		-e CXXFLAGS="-O0 -g0" \
+		-e CXX20FLAGS="-O0 -g0" \
+		-e RENV_CONFIG_CACHE_ENABLED=FALSE \
+		-e RENV_CONFIG_EXTERNAL_LIBRARIES=/usr/local/lib/R/site-library \
+		-e RENV_CONFIG_SYNCHRONIZED_CHECK=FALSE \
+		-v "$(CURDIR):/work" -w /work rocker/tidyverse:4.6.0 \
+		bash -lc 'apt-get update && apt-get install -y --no-install-recommends cmake curl git latexmk libnlopt-dev texlive-latex-extra texlive-fonts-recommended && Rscript -e '\''install.packages("remotes", repos="https://cloud.r-project.org"); remotes::install_deps(dependencies=TRUE, upgrade="never")'\'' && make ci'
 
 clean:
 	latexmk -C -cd paper/proof.tex
-
